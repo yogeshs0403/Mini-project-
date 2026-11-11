@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block title %}CyberAware | Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse"></span> YOUR DIGITAL SAFETY STARTS HERE</div>
+    <h1>Think before you click.<br><span>Stay cyber smart.</span></h1>
+    <p>Build safer online habits with simple lessons, practical security tips and quick quizzes.</p>
+    <div class="actions"><a class="btn primary" href="{{ url_for('learn') }}">Explore lessons →</a><a class="btn secondary" href="{{ url_for('register') }}">Create account</a></div>
+    <div class="trust"><span>✓ Beginner friendly</span><span>✓ Learn at your pace</span></div>
+  </div>
+  <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="shield">⌑</div><div class="float-card card-a">🔒 <b>Secure account</b><small>Protect your identity</small></div><div class="float-card card-b">✓ <b>Threat aware</b><small>Spot suspicious activity</small></div></div>
+</section>
+<section class="section">
+  <div class="section-head"><div><div class="eyebrow">LEARN THE ESSENTIALS</div><h2>Small habits. Stronger security.</h2></div><a href="{{ url_for('learn') }}" class="text-link">View all lessons →</a></div>
+  <div class="cards">
+    <article class="feature"><div class="feature-icon purple">✉</div><h3>Phishing awareness</h3><p>Recognise suspicious messages, links and unexpected attachments.</p></article>
+    <article class="feature"><div class="feature-icon blue">▣</div><h3>Password safety</h3><p>Understand unique passwords, passphrases and password managers.</p></article>
+    <article class="feature"><div class="feature-icon green">◎</div><h3>Account protection</h3><p>Learn how multi-factor authentication adds another layer of safety.</p></article>
+  </div>
+</section>
+{% endblock %}

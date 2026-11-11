@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Admin | CyberAware{% endblock %}{% block content %}
+<div class="page-head"><div class="eyebrow">PORTAL MANAGEMENT</div><h1>Admin dashboard</h1><p class="muted">Overview of registered users and recent quiz activity.</p></div>
+<section class="panel"><h2>Registered users</h2><div class="table-wrap"><table><tr><th>ID</th><th>Username</th></tr>{% for u in users %}<tr><td>{{ u.id }}</td><td>{{ u.username }}</td></tr>{% endfor %}</table></div></section>
+<section class="panel"><h2>Recent quiz attempts</h2><div class="table-wrap"><table><tr><th>User</th><th>Score</th><th>Date</th></tr>{% for r in results %}<tr><td>{{ r.username }}</td><td>{{ r.score }}/{{ r.total }}</td><td>{{ r.created_at }}</td></tr>{% else %}<tr><td colspan="3">No quiz attempts yet.</td></tr>{% endfor %}</table></div></section>
+{% endblock %}

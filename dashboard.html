@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Dashboard | CyberAware{% endblock %}{% block content %}
+<div class="page-head"><div class="eyebrow">YOUR LEARNING SPACE</div><h1>Welcome, {{ session.username }}.</h1><p class="muted">Keep learning. Every safe habit makes a difference.</p></div>
+<div class="cards two"><a class="feature link-card" href="{{ url_for('learn') }}"><div class="feature-icon purple">⌂</div><h3>Awareness lessons</h3><p>Explore practical online safety topics.</p><span class="text-link">Start learning →</span></a><a class="feature link-card" href="{{ url_for('quiz') }}"><div class="feature-icon blue">✓</div><h3>Knowledge quiz</h3><p>Test what you have learned.</p><span class="text-link">Take quiz →</span></a></div>
+<section class="panel"><div class="section-head"><h2>Recent quiz results</h2><a href="{{ url_for('quiz') }}" class="text-link">Try again →</a></div>
+{% if results %}<div class="table-wrap"><table><tr><th>Score</th><th>Date</th></tr>{% for r in results %}<tr><td><b>{{ r.score }}/{{ r.total }}</b></td><td>{{ r.created_at }}</td></tr>{% endfor %}</table></div>{% else %}<p class="muted">No quiz attempts yet. Take your first quiz to see your results here.</p>{% endif %}</section>
+{% endblock %}

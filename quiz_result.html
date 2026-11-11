@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Quiz result | CyberAware{% endblock %}{% block content %}
+<div class="result panel"><div class="eyebrow">QUIZ COMPLETED</div><h1>Your score</h1><div class="score">{{ score }}<span>/ {{ total }}</span></div><p class="muted">{% if score == total %}Excellent work! You got every answer right.{% elif score >= 3 %}Good effort! Review the explanations below to improve.{% else %}Good start. Read the lessons and try again.{% endif %}</p><a class="btn primary" href="{{ url_for('quiz') }}">Retake quiz</a> <a class="btn secondary" href="{{ url_for('dashboard') }}">Dashboard</a></div>
+{% for item in quiz %}<section class="panel explanation"><h3>{{ loop.index }}. {{ item.q }}</h3><p><b>Correct answer:</b> {{ item.opts[item.a] }}</p><p class="muted">{{ item.why }}</p></section>{% endfor %}
+{% endblock %}

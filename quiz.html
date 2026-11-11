@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Quiz | CyberAware{% endblock %}{% block content %}
+<div class="page-head"><div class="eyebrow">QUICK KNOWLEDGE CHECK</div><h1>Cyber safety quiz</h1><p class="muted">Choose the best answer for each question.</p></div>
+<form method="post" class="quiz-form">{% for item in quiz %}<section class="panel question"><div class="eyebrow">QUESTION {{ loop.index }} OF {{ quiz|length }}</div><h3>{{ item.q }}</h3>{% for opt in item.opts %}<label class="option"><input type="radio" name="q{{ loop.parent.index0 }}" value="{{ loop.index0 }}" required><span>{{ opt }}</span></label>{% endfor %}</section>{% endfor %}<button class="btn primary">Submit answers →</button></form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block title %}Learn | CyberAware{% endblock %}{% block content %}
+<div class="page-head"><div class="eyebrow">CYBERSECURITY BASICS</div><h1>Knowledge is your first defence.</h1><p class="muted">Simple steps that help protect your information and accounts.</p></div>
+<div class="lesson-list">
+<article class="panel lesson"><div class="feature-icon purple">✉</div><div><h2>1. Phishing awareness</h2><p>Phishing messages try to trick people into sharing information or opening unsafe links. Watch for unexpected urgency, unusual sender addresses, spelling mistakes and requests for sensitive details. Visit important websites by typing their address yourself.</p></div></article>
+<article class="panel lesson"><div class="feature-icon blue">▣</div><div><h2>2. Strong passwords</h2><p>Use a long, unique password or passphrase for each account. Avoid personal details and reused passwords. A reputable password manager can help you create and store unique passwords.</p></div></article>
+<article class="panel lesson"><div class="feature-icon green">◎</div><div><h2>3. Multi-factor authentication</h2><p>Turn on MFA wherever it is available. It adds another verification step, so a password alone is less likely to be enough to access your account. Never share one-time verification codes.</p></div></article>
+<article class="panel lesson"><div class="feature-icon orange">⌁</div><div><h2>4. Safe browsing and updates</h2><p>Keep your operating system, browser and apps updated. Download software from trusted sources, check website addresses and avoid entering sensitive information on suspicious pages.</p></div></article>
+<article class="panel lesson"><div class="feature-icon pink">◈</div><div><h2>5. Public Wi-Fi safety</h2><p>Be cautious on public networks. Prefer trusted websites using HTTPS, avoid sensitive transactions on networks you do not trust, and disable automatic connection to unknown Wi-Fi networks.</p></div></article>
+</div>
+{% if session.get('user_id') %}<a class="btn primary" href="{{ url_for('quiz') }}">Test your knowledge →</a>{% else %}<a class="btn primary" href="{{ url_for('register') }}">Join and take the quiz →</a>{% endif %}
+{% endblock %}
